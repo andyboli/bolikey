@@ -1,0 +1,20 @@
+{
+  "name": "bolikey",
+  "version": "1.0.0",
+  "description": "A project to store and verify passwords based on predefined rules.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyboli/bolikey.git"
+  },
+  "keywords": [],
+  "author": "Bolivar <anderson.bolivar.2012@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andyboli/bolikey/issues"
+  },
+  "homepage": "https://github.com/andyboli/bolikey#readme"
+}
