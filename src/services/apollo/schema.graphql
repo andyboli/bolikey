@@ -7,13 +7,16 @@ enum RuleTypes {
   noRepeted
 }
 
-type Password {
-  password: String!
-  isValid: Boolean
-  rules: [Rule]
-}
-
 type Rule {
   rule: RuleTypes
   value: Number
+}
+
+type Verify {
+  verify: Boolean
+  noMatch: [RuleTypes]
+}
+
+type Query {
+  verify(password: String!, rules: [Rule]): Verify
 }
