@@ -2,7 +2,7 @@
   "name": "bolikey",
   "version": "1.0.0",
   "description": "A project to store and verify passwords based on predefined rules.",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/andyboli/bolikey/issues"
   },
-  "homepage": "https://github.com/andyboli/bolikey#readme"
+  "homepage": "https://github.com/andyboli/bolikey#readme",
+  "devDependencies": {
+    "typescript": "4.9.5"
+  }
 }
