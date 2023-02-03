@@ -1,0 +1,19 @@
+enum RuleTypes {
+  minSize
+  minUppercase
+  minLowercase
+  minDigit
+  minSpecialChars
+  noRepeted
+}
+
+type Password {
+  password: String!
+  isValid: Boolean
+  rules: [Rule]
+}
+
+type Rule {
+  rule: RuleTypes
+  value: Number
+}
