@@ -1,3 +1,4 @@
+const typeDefs = `#graphql
 enum RuleTypes {
   minDigit
   minLowercase
@@ -20,3 +21,6 @@ input Rule {
 type Query {
   verify(password: String!, rules: [Rule]): Verify
 }
+`;
+
+export default typeDefs;
