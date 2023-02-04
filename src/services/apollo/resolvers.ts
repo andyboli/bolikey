@@ -1,9 +1,9 @@
 enum RuleTypes {
-  minSize,
-  minUppercase,
-  minLowercase,
   minDigit,
+  minLowercase,
+  minSize,
   minSpecialChars,
+  minUppercase,
   noRepeted,
 }
 
