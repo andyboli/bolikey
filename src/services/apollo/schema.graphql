@@ -7,14 +7,14 @@ enum RuleTypes {
   noRepeted
 }
 
-type Rule {
-  rule: RuleTypes
-  value: Number
-}
-
 type Verify {
   verify: Boolean
   noMatch: [RuleTypes]
+}
+
+input Rule {
+  rule: RuleTypes
+  value: Int
 }
 
 type Query {
