@@ -1,25 +1,19 @@
 import "graphql-import-node";
-import ExpressService from "express";
-import DotenvService from "./services/dotenv";
-import ApolloMiddleware from "./middlewares/apollo";
-import cors from "cors";
-import { json } from "body-parser";
 
-const app = ExpressService();
-const EXPRESS_PORT = DotenvService.getEnv("EXPRESS_PORT");
+import AppServices from "./services";
 
 const startApp = () => {
-  const corsOptions: cors.CorsOptions = {
-    origin: "*",
-  };
+  const app = AppServices.ExpressService.createApp();
 
-  app.use(cors(corsOptions), json());
+  AppServices.ExpressService.configApp(app);
 
-  ApolloMiddleware(app);
+  AppServices.ApolloService.apolloMiddleware(app);
 
-  app.listen(EXPRESS_PORT, () => {
-    console.info("🚀: api started on port " + EXPRESS_PORT);
-  });
+  AppServices.DotenvService.configDotenv();
+
+  const EXPRESS_PORT = AppServices.DotenvService.getEnv("EXPRESS_PORT");
+
+  AppServices.ExpressService.startApp({ app, expressPort: EXPRESS_PORT });
 };
 
 startApp();
