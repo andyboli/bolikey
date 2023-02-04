@@ -1,15 +1,15 @@
 enum RuleTypes {
-  minSize
-  minUppercase
-  minLowercase
   minDigit
+  minLowercase
+  minSize
   minSpecialChars
+  minUppercase
   noRepeted
 }
 
 type Verify {
-  verify: Boolean
   noMatch: [RuleTypes]
+  verify: Boolean
 }
 
 input Rule {
