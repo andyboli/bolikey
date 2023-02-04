@@ -2,7 +2,7 @@ import { ApolloServer } from "@apollo/server";
 import { Express } from "express";
 import { expressMiddleware } from "@apollo/server/express4";
 
-import * as typeDefs from "./schema.graphql";
+import typeDefs from "./typeDefs";
 import * as resolvers from "./resolvers";
 
 const apolloMiddleware = async (app: Express) => {
