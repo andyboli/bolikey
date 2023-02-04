@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 
-config();
+const configDotenv = () => config();
 
 const getEnv = (envKey: string): string => {
   const envValue = process.env[envKey];
@@ -10,6 +10,6 @@ const getEnv = (envKey: string): string => {
   return envValue;
 };
 
-const DotenvService = { getEnv };
+const DotenvService = { configDotenv, getEnv };
 
 export default DotenvService;
