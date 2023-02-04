@@ -1,4 +1,3 @@
-import "graphql-import-node";
 import { json } from "body-parser";
 import cors from "cors";
 import ExpressApp, { Express } from "express";

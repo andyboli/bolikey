@@ -1,5 +1,3 @@
-import "graphql-import-node";
-
 import AppServices from "./services";
 
 const startApp = () => {
