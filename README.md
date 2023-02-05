@@ -1,4 +1,3 @@
 # bolikey
-A project to store and verify passwords based on predefined rules.
 
-
+A project to verify passwords based on predefined rules.

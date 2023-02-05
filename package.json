@@ -1,11 +1,11 @@
 {
   "name": "bolikey",
   "version": "1.0.0",
-  "description": "A project to store and verify passwords based on predefined rules.",
+  "description": "A project to verify passwords based on predefined rules.",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node ./src/index.ts",
     "dev": "nodemon ./src/index.ts",
+    "start": "ts-node ./src/index.ts",
     "test": "jest --watchAll"
   },
   "repository": {
