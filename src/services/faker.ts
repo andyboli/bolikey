@@ -18,7 +18,7 @@ const getLessThanMinNumber = (minNumber: number) =>
 const getGreaterThanMinNumber = (minNumber: number) =>
   minNumber + faker.datatype.number({ precision: 1, max: 9, min: 1 });
 
-const getRandomWord = (length: number = 3) => faker.lorem.word({ length });
+const getRandomWord = (length: number = 3) => faker.lorem.word(length);
 
 const getRandomPassword = (
   length = 3,
