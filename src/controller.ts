@@ -18,18 +18,34 @@ const minLowercase = ({ password, minNumber }: MinFunctionInterface) => {
 };
 
 //minSize: tem pelo menos x caracteres.
-const minSize = ({ password, minNumber }: MinFunctionInterface) => {};
+const minSize = ({ password, minNumber }: MinFunctionInterface) =>
+  password.length >= minNumber;
 
 // minSpecialChars: tem pelo menos x caracteres especiais ( Os caracteres especiais são os
 // caracteres da seguinte string: "!@#$%^&*()-+\/{}[]" )
-const minSpecialChars = ({ password, minNumber }: MinFunctionInterface) => {};
+const minSpecialChars = ({ password, minNumber }: MinFunctionInterface) => {
+  const minSpecialCharsRegex = new RegExp(
+    `([\\s\\S]*[!@#$%^&*()\\-+\\\\\/{}\\[\\]]){${minNumber},}`
+  );
+
+  return minSpecialCharsRegex.test(password);
+};
 
 // minUppercase: tem pelo menos x caracteres maiúsculos
-const minUppercase = ({ password, minNumber }: MinFunctionInterface) => {};
+const minUppercase = ({ password, minNumber }: MinFunctionInterface) => {
+  const minUppercaseRegex = new RegExp(`([\\s\\S]*[A-Z]){${minNumber},}`);
+
+  return minUppercaseRegex.test(password);
+};
 
 // noRepeted: não tenha nenhum caractere repetido em sequência ( ou seja, "aab" viola esta
 //*  */condição, mas "aba" não)
-const noRepeted = (password: string) => {};
+const noRepeted = (password: string) =>
+  password
+    .split("")
+    .every((letter, index) =>
+      index === 0 ? true : letter !== password[index - 1]
+    );
 
 const AppController = {
   minDigit,
