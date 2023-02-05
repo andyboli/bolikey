@@ -1,6 +1,6 @@
 # bolikey
 
-A project to verify passwords based on predefined rules.
+[A project to verify passwords based on predefined rules.](https://github.com/andyboli/bolikey)
 
 ## Start project
 
@@ -18,7 +18,7 @@ npm start
 
 ### Make requests on Apollo Sandbox
 
-Apollo Sandbox (https://www.apollographql.com/docs/graphos/explorer/sandbox/)
+[Apollo Sandbox](https://www.apollographql.com/docs/graphos/explorer/sandbox/)
 
 Don't forget to configure the right endpoint
 
