@@ -8,7 +8,7 @@ To start the project follow the sequence steps:
 
 ### Create an .env file
 
-Create an .env file in the root of the project with the EXPRESS_PORT variable to guarantee the application security.
+Create an .env file in the root of the project with the EXPRESS_PORT variable.
 
 ### Run the start script
 
