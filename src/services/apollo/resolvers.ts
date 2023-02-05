@@ -1,13 +1,5 @@
+import { RuleTypes } from "../../constants";
 import AppController from "../../controller";
-
-enum RuleTypes {
-  "minDigit" = "minDigit",
-  "minLowercase" = "minLowercase",
-  "minSize" = "minSize",
-  "minSpecialChars" = "minSpecialChars",
-  "minUppercase" = "minUppercase",
-  "noRepeted" = "noRepeted",
-}
 
 type Rule = {
   rule: RuleTypes;
@@ -41,4 +33,8 @@ const verify = (parent: any, { password, rules }: VerifyArgsInterface) => {
   return { verify: !noMatchRules.length, noMatch: noMatchRules };
 };
 
-export const Query = { verify };
+const Query = { verify };
+
+const resolvers = { Query };
+
+export default resolvers;
