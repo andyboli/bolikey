@@ -10,6 +10,12 @@ To start the project follow the sequence steps:
 
 Create an .env file in the root of the project with the EXPRESS_PORT variable.
 
+### Download the packages
+
+```bash
+npm i
+```
+
 ### Run the start script
 
 ```bash
