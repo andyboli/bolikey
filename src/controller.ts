@@ -5,13 +5,17 @@ interface MinFunctionInterface {
 
 // minDigit: tem pelo menos x dígitos (0-9)
 const minDigit = ({ password, minNumber }: MinFunctionInterface) => {
-  const minDigitRegex = new RegExp(`(\\D*\\d){${minNumber},}`);
+  const minDigitRegex = new RegExp(`([\\s\\S]*\\d){${minNumber},}`);
 
-  return password.match(minDigitRegex);
+  return minDigitRegex.test(password);
 };
 
 //minLowercase: tem pelo menos x caracteres minúsculos
-const minLowercase = ({ password, minNumber }: MinFunctionInterface) => {};
+const minLowercase = ({ password, minNumber }: MinFunctionInterface) => {
+  const minLowercaseRegex = new RegExp(`([\\s\\S]*[a-z]){${minNumber},}`);
+
+  return minLowercaseRegex.test(password);
+};
 
 //minSize: tem pelo menos x caracteres.
 const minSize = ({ password, minNumber }: MinFunctionInterface) => {};
