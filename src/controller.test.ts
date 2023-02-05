@@ -50,7 +50,7 @@ describe("Test App Controller", () => {
       // When the min number is 0 the minDigit function should return true
       const minNumberMock = AppService.FakerService.getRandomNumber(1);
       const lessThanMinNumberMock =
-        AppService.FakerService.getLessThanMinNumber(minNumberMock);
+        AppService.FakerService.getLessThanNumber(minNumberMock);
       const randomNumbers = getRandomNumbers(lessThanMinNumberMock);
       const randomTextPassword = AppService.FakerService.getRandomPassword(
         undefined,
@@ -134,7 +134,7 @@ describe("Test App Controller", () => {
       // When the min number is 0 the minLowercase function should return true
       const minNumberMock = AppService.FakerService.getRandomNumber(1);
       const lessThanMinNumberMock =
-        AppService.FakerService.getLessThanMinNumber(minNumberMock);
+        AppService.FakerService.getLessThanNumber(minNumberMock);
       const randomNumberPassword = AppService.FakerService.getRandomPassword(
         undefined,
         AppConstants.NUMBER_REGEX
@@ -183,7 +183,7 @@ describe("Test App Controller", () => {
     it("Should return true when the password has at least the min number size", () => {
       const minNumberMock = AppService.FakerService.getRandomNumber();
       const greaterThanMinNumber =
-        AppService.FakerService.getGreaterThanMinNumber(minNumberMock);
+        AppService.FakerService.getGreaterThanNumber(minNumberMock);
       const randomPasswordWithExactSizeMock =
         AppService.FakerService.getRandomPassword(minNumberMock);
       const randomPasswordWithGreaterSizeMock =
@@ -208,7 +208,7 @@ describe("Test App Controller", () => {
       // When the min number is 0 the minSize function should return true
       const minNumberMock = AppService.FakerService.getRandomNumber(1);
       const lessThanMinNumberMock =
-        AppService.FakerService.getLessThanMinNumber(minNumberMock);
+        AppService.FakerService.getLessThanNumber(minNumberMock);
       const randomPasswordWithLessSizeMock =
         AppService.FakerService.getRandomPassword(lessThanMinNumberMock);
 
@@ -266,7 +266,7 @@ describe("Test App Controller", () => {
       // When the min number is 0 the minSpecialChars function should return true
       const minNumberMock = AppService.FakerService.getRandomNumber(1);
       const lessThanMinNumberMock =
-        AppService.FakerService.getLessThanMinNumber(minNumberMock);
+        AppService.FakerService.getLessThanNumber(minNumberMock);
       const randomNumberPassword = AppService.FakerService.getRandomPassword(
         undefined,
         AppConstants.NUMBER_REGEX
@@ -358,7 +358,7 @@ describe("Test App Controller", () => {
       // When the min number is 0 the minUppercase function should return true
       const minNumberMock = AppService.FakerService.getRandomNumber(1);
       const lessThanMinNumberMock =
-        AppService.FakerService.getLessThanMinNumber(minNumberMock);
+        AppService.FakerService.getLessThanNumber(minNumberMock);
       const randomNumberPassword = AppService.FakerService.getRandomPassword(
         undefined,
         AppConstants.NUMBER_REGEX

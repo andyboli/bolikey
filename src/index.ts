@@ -1,5 +1,8 @@
 import AppServices from "./services";
 
+/**
+ * Starts the application server following a sequence of required configuration steps.
+ */
 const startApp = () => {
   const app = AppServices.ExpressService.createApp();
 

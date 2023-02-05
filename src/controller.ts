@@ -3,26 +3,33 @@ interface MinFunctionInterface {
   minNumber: number;
 }
 
-// minDigit: tem pelo menos x dígitos (0-9)
+/**
+ * Rule callback that checks if the password has at least the minNumber of digits (0-9).
+ */
 const minDigit = ({ password, minNumber }: MinFunctionInterface) => {
   const minDigitRegex = new RegExp(`([\\s\\S]*\\d){${minNumber},}`);
 
   return minDigitRegex.test(password);
 };
 
-//minLowercase: tem pelo menos x caracteres minúsculos
+/**
+ * Rule callback that checks if the password has at least the minNumber of lowercase caracters.
+ */
 const minLowercase = ({ password, minNumber }: MinFunctionInterface) => {
   const minLowercaseRegex = new RegExp(`([\\s\\S]*[a-z]){${minNumber},}`);
 
   return minLowercaseRegex.test(password);
 };
 
-//minSize: tem pelo menos x caracteres.
+/**
+ * Rule callback that checks if the password has at least the minNumber of size.
+ */
 const minSize = ({ password, minNumber }: MinFunctionInterface) =>
   password.length >= minNumber;
 
-// minSpecialChars: tem pelo menos x caracteres especiais ( Os caracteres especiais são os
-// caracteres da seguinte string: "!@#$%^&*()-+\/{}[]" )
+/**
+ * Rule callback that checks if the password has at least the minNumber of special caracters (!@#$%^&*()-+\/{}[]).
+ */
 const minSpecialChars = ({ password, minNumber }: MinFunctionInterface) => {
   const minSpecialCharsRegex = new RegExp(
     `([\\s\\S]*[!@#$%^&*()\\-+\\\\\/{}\\[\\]]){${minNumber},}`
@@ -31,15 +38,18 @@ const minSpecialChars = ({ password, minNumber }: MinFunctionInterface) => {
   return minSpecialCharsRegex.test(password);
 };
 
-// minUppercase: tem pelo menos x caracteres maiúsculos
+/**
+ * Rule callback that checks if the password has at least the minNumber of uppercasecase caracters.
+ */
 const minUppercase = ({ password, minNumber }: MinFunctionInterface) => {
   const minUppercaseRegex = new RegExp(`([\\s\\S]*[A-Z]){${minNumber},}`);
 
   return minUppercaseRegex.test(password);
 };
 
-// noRepeted: não tenha nenhum caractere repetido em sequência ( ou seja, "aab" viola esta
-//*  */condição, mas "aba" não)
+/**
+ * Rule callback that checks if the password has no repeated caracters in sequence.
+ */
 const noRepeted = (password: string) =>
   password
     .split("")
@@ -47,6 +57,9 @@ const noRepeted = (password: string) =>
       index === 0 ? true : letter !== password[index - 1]
     );
 
+/**
+ * Application controller with all business logic functions isolated.
+ */
 const AppController = {
   minDigit,
   minLowercase,

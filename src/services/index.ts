@@ -3,4 +3,14 @@ import DotenvService from "./dotenv";
 import ExpressService from "./express";
 import FakerService from "./faker";
 
-export default { ApolloService, DotenvService, ExpressService, FakerService };
+/**
+ * Application Services with modules that has isolate instances of external modules
+ */
+const AppServices = {
+  ApolloService,
+  DotenvService,
+  ExpressService,
+  FakerService,
+};
+
+export default AppServices;

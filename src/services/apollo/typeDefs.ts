@@ -1,3 +1,6 @@
+/**
+ * Application's graphQL schema
+ */
 const typeDefs = `#graphql
 enum RuleTypes {
   minDigit
