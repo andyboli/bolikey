@@ -1,9 +1,6 @@
+import AppConstants from "./constants";
 import AppController from "./controller";
 import AppService from "./services";
-
-const TEXT_REGEX = /^[a-zA-Z]*$/;
-const NUMBER_REGEX = /^[0-9]*$/;
-const SPECIAL_REGEX = /^[!@#$%^&*()\-+\\\/{}\[\]]*$/;
 
 const getRandomNumbers = (length: number) => {
   const randomNumbers = [];
@@ -57,7 +54,7 @@ describe("Test App Controller", () => {
       const randomNumbers = getRandomNumbers(lessThanMinNumberMock);
       const randomTextPassword = AppService.FakerService.getRandomPassword(
         undefined,
-        TEXT_REGEX
+        AppConstants.TEXT_REGEX
       );
 
       const randomPasswordOnlyWithIntegersMock = randomNumbers.join("");
@@ -140,7 +137,7 @@ describe("Test App Controller", () => {
         AppService.FakerService.getLessThanMinNumber(minNumberMock);
       const randomNumberPassword = AppService.FakerService.getRandomPassword(
         undefined,
-        NUMBER_REGEX
+        AppConstants.NUMBER_REGEX
       );
 
       const randomPasswordOnlyWithLowercaseCaracters = lessThanMinNumberMock
@@ -230,7 +227,10 @@ describe("Test App Controller", () => {
       const randomPassword = AppService.FakerService.getRandomPassword();
 
       const randomPasswordOnlyWithSpecialCaracters =
-        AppService.FakerService.getRandomPassword(minNumberMock, SPECIAL_REGEX);
+        AppService.FakerService.getRandomPassword(
+          minNumberMock,
+          AppConstants.SPECIAL_REGEX
+        );
       const randomPasswordWithSpecialCaractersInTheStartMock =
         randomPasswordOnlyWithSpecialCaracters + randomPassword;
       const randomPasswordWithSpecialCaractersInTheEndMock =
@@ -269,13 +269,13 @@ describe("Test App Controller", () => {
         AppService.FakerService.getLessThanMinNumber(minNumberMock);
       const randomNumberPassword = AppService.FakerService.getRandomPassword(
         undefined,
-        NUMBER_REGEX
+        AppConstants.NUMBER_REGEX
       );
 
       const randomPasswordOnlyWithSpecialCaracters = lessThanMinNumberMock
         ? AppService.FakerService.getRandomPassword(
             lessThanMinNumberMock,
-            SPECIAL_REGEX
+            AppConstants.SPECIAL_REGEX
           )
         : "";
       const randomPasswordWithSpecialCaractersInTheStartMock =
@@ -361,7 +361,7 @@ describe("Test App Controller", () => {
         AppService.FakerService.getLessThanMinNumber(minNumberMock);
       const randomNumberPassword = AppService.FakerService.getRandomPassword(
         undefined,
-        NUMBER_REGEX
+        AppConstants.NUMBER_REGEX
       );
 
       const randomPasswordOnlyWithUppercaseCaracters = lessThanMinNumberMock
